@@ -1,0 +1,71 @@
+.poker-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  perspective: 800px;
+}
+
+.card {
+  width: 100px;
+  height: 140px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-out;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateX(-100deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+.back {
+  z-index: 2;
+}
+
+.front {
+  transform: rotateX(100deg);
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-text {
+  position: absolute;
+  font-family: "Press Start 2P", monospace;
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.refresh-btn {
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.refresh-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
