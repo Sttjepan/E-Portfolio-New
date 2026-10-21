@@ -73,7 +73,7 @@ export default function PokerSkills() {
 
   return (
     <div className="flex flex-col items-center space-y-6 w-full">
-      {/* 🃏 Card Deck */}
+      {/* Card deck */}
       <div className="bg-white/10 p-6 rounded-xl backdrop-blur-md">
         <div className="flex justify-center flex-wrap gap-4">
           {currentDeck.map((card, i) => (
@@ -106,7 +106,7 @@ export default function PokerSkills() {
         </div>
       </div>
 
-      {/* 🔁 Refresh + Social */}
+      {/* Refresh and social links */}
       <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl w-full flex flex-col items-center space-y-4">
         <button
           disabled={refreshCount >= 2}
@@ -126,10 +126,9 @@ export default function PokerSkills() {
           <span>{refreshCount < 2 ? "Refresh Cards" : "No More Refreshes"}</span>
         </button>
 
-        {/* 🌐 Social Links */}
+        {/* Social links */}
         <div className="text-center text-white space-y-1">
           <div className="flex justify-center gap-6 text-purple-300">
-            <a href="https://x.com/5tjepann" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">X</a>
             <a href="https://github.com/Sttjepan" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">GitHub</a>
             <a href="https://www.linkedin.com/in/semren-stephen" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">LinkedIn</a>
           </div>

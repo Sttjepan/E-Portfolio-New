@@ -18,33 +18,32 @@ export default function Navbar() {
   const navLinks = [
     { name: "Projects", path: "/projects" },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 transition-all duration-300 border-b border-white/10 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+      className="fixed top-0 left-0 w-full z-50 flex items-center justify-between gap-3 px-4 sm:px-8 transition-all duration-300 border-b border-white/10 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
       style={{
         backgroundColor: background,
         height,
       }}
     >
       {/* Logo */}
-      <Link to="/" className="flex items-center h-20">
+      <Link to="/" className="flex items-center shrink-0">
         <img
           src={logo}
           alt="Logo"
-          className="h-12 w-auto object-contain drop-shadow-[0_0_6px_rgba(99,102,241,0.4)]"
+          className="h-9 sm:h-12 w-auto object-contain drop-shadow-[0_0_6px_rgba(99,102,241,0.4)]"
         />
       </Link>
 
       {/* Centered Clock */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 text-white text-sm font-mono tracking-wide">
+      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 text-white text-xs lg:text-sm font-mono tracking-wide">
         <Clock />
       </div>
 
       {/* Nav Links */}
-      <ul className="flex gap-8 text-white text-sm font-medium">
+      <ul className="flex gap-4 sm:gap-8 text-white text-sm font-medium shrink-0">
         {navLinks.map((link) => (
           <li key={link.name}>
             <Link

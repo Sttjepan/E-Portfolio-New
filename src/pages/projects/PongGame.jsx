@@ -31,7 +31,8 @@ export default function PongGame() {
     const audio = audioRef.current;
     if (!audio) return;
     audio.volume = muted ? 0 : volume;
-    gameStarted && !isPaused ? audio.play() : audio.pause();
+    if (gameStarted && !isPaused) audio.play().catch(() => {});
+    else audio.pause();
   }, [volume, muted, gameStarted, isPaused]);
 
   // Main game loop
@@ -225,7 +226,7 @@ export default function PongGame() {
       <div
         className="
           relative
-          w-[1000px] h-[600px]
+          w-full max-w-[1000px] aspect-[5/3]
           border-4 border-purple-500
           rounded-xl shadow-lg
           overflow-hidden
@@ -241,8 +242,8 @@ export default function PongGame() {
 
         {/* Overlay */}
         {(!gameStarted || isPaused) && (
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center space-y-4 bg-black bg-opacity-60 rounded-xl">
-            {winner && <p className="text-lg">{winner} wins! 🎉</p>}
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center space-y-2 sm:space-y-4 p-2 bg-black bg-opacity-60 rounded-xl">
+            {winner && <p className="text-lg">{winner} wins!</p>}
             <p>Use ↑ ↓ to move</p>
             <div>
               <p>Difficulty:</p>
