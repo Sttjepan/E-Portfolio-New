@@ -1,0 +1,2 @@
+E-Portfolio React version
+**original Vite + React + Tailwind CSS + PostCSS project**. Dark/purple theme, background particles, typed homepage introduction, gradient name reveal, poker-style skill cards, clock, and Paint/Pong demos.
